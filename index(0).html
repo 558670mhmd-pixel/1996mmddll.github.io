@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>محمد فون | Mohammed Phone</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f8f9fa;--card:#fff;--text:#111827;--muted:#6b7280;--gold:#c5a059;--black:#1f2937;--border:#e5e7eb;--wa:#25D366}
+[data-theme="dark"]{--bg:#0f172a;--card:#1e293b;--text:#f8fafc;--muted:#94a3b8;--black:#38bdf8;--border:#334155}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Tajawal',sans-serif}
+body{background:var(--bg);color:var(--text);padding-bottom:80px;transition:.3s}
+.container{max-width:1100px;margin:0 auto;padding:20px}
+
+/* شريط الإعلانات */
+.ticker-wrapper{background:var(--gold);color:#111;padding:10px 0;overflow:hidden;white-space:nowrap;font-weight:700;font-size:0.95rem}
+.ticker{display:inline-block;animation:scrollText 25s linear infinite}
+@keyframes scrollText{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
+
+.theme-toggle{position:fixed;top:20px;left:20px;z-index:99;background:var(--card);border:1px solid var(--border);width:45px;height:45px;border-radius:50%;cursor:pointer;font-size:1.3rem;box-shadow:0 4px 12px rgba(0,0,0,.1)}
+.header{text-align:center;padding:40px 20px 20px}
+.logo{width:110px;height:110px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);padding:4px;margin-bottom:15px;box-shadow:0 10px 30px rgba(0,0,0,.1)}
+.brand-title{font-size:2.2rem;font-weight:900;margin-bottom:5px}
+.brand-subtitle{font-size:.9rem;color:var(--muted);letter-spacing:3px;font-weight:500}
+.quick-contact{display:flex;justify-content:center;gap:10px;margin-top:20px;flex-wrap:wrap}
+.quick-contact a{background:var(--card);color:var(--text);border:1px solid var(--border);padding:8px 18px;border-radius:30px;text-decoration:none;font-size:.9rem;font-weight:700}
+.quick-contact a:hover{background:var(--black);color:#fff}
+
+.section-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:25px;margin-bottom:25px}
+.section-title{font-size:1.3rem;font-weight:800;margin-bottom:20px;display:flex;align-items:center;gap:10px;padding-bottom:15px;border-bottom:1px solid var(--border)}
+.section-title span{color:var(--gold)}
+
+/* شريط الثقة */
+.trust-bar{display:flex; justify-content:space-around; background:var(--card); padding:15px; border-radius:16px; margin-bottom:20px; border:1px solid var(--border); flex-wrap:wrap; gap:10px; font-weight:700; font-size:0.85rem; text-align:center;}
+
+/* 🔥 الترتيب الجديد للخانات (شبكة مرتبة) 🔥 */
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 خانات بالسطر */
+  gap: 10px;
+  margin-bottom: 20px;
+}
+@media(max-width: 600px) {
+  .brands-grid { grid-template-columns: repeat(2, 1fr); } /* بالموبايل 2 بالسطر */
+}
+
+.brand-btn { 
+  padding: 15px 10px; 
+  background: var(--bg); 
+  border: 2px solid var(--border); 
+  border-radius: 12px; 
+  font-weight: 800; 
+  font-size: 0.95rem; 
+  cursor: pointer; 
+  transition: all 0.3s ease; 
+  display: flex; 
+  flex-direction: column; /* الأيقونة فوق والاسم تحت */
+  align-items: center; 
+  gap: 8px;
+  color: var(--text);
+}
+.brand-btn span { font-size: 1.5rem; } /* حجم الأيقونة */
+
+.brand-btn:hover { border-color: var(--gold); background: var(--card); }
+
+/* شكل الخانة لما تنضغط */
+.brand-btn.active { 
+  background: var(--black); 
+  color: #fff; 
+  border-color: var(--black); 
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* ألوان الماركات المميزة */
+.brand-btn[data-brand="Apple"].active { background: #333; border-color: #333; }
+.brand-btn[data-brand="Samsung"].active { background: #1428A0; border-color: #1428A0; }
+.brand-btn[data-brand="Redmi"].active { background: #FF6900; border-color: #FF6900; }
+.brand-btn[data-brand="Oppo"].active { background: #008000; border-color: #008000; }
+.brand-btn[data-brand="Realme"].active { background: #FFC915; border-color: #FFC915; color: #000; }
+.brand-btn[data-brand="Huawei"].active { background: #CF0A2C; border-color: #CF0A2C; }
+
+/* البحث والأجهزة */
+.search-input{width:100%;padding:16px 20px;border:1px solid var(--border);border-radius:12px;font-size:1rem;background:var(--bg);color:var(--text);margin-bottom:20px}
+.search-input:focus{outline:none;border-color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:15px}
+.phone-card{border:1px solid var(--border);border-radius:12px;padding:20px;background:var(--bg);transition:.3s}
+.phone-card:hover{border-color:var(--gold);background:var(--card);transform:translateY(-3px)}
+.phone-icon{font-size:2rem;margin-bottom:10px}
+.phone-name{font-weight:800;font-size:1.1rem;margin-bottom:15px;display:flex;justify-content:space-between;align-items:flex-start}
+.phone-name .badge{font-size:.7rem;background:var(--black);color:#fff;padding:4px 10px;border-radius:20px;font-weight:500}
+.price-line{display:flex;justify-content:space-between;font-size:.95rem;margin-bottom:10px;color:var(--muted)}
+.price-line strong{color:var(--text);font-weight:700}
+.price-line strong.gold{color:var(--gold)}
+.btn-whatsapp-card{display:block; width:100%; text-align:center; background:var(--wa); color:#fff; padding:12px; border-radius:8px; text-decoration:none; font-weight:700; font-size:0.95rem; margin-top:15px; transition:.3s;}
+.btn-whatsapp-card:hover{background:#1eb954; transform:scale(1.02);}
+
+/* الكراكات */
+.crack-item{background:var(--bg);padding:15px;border-radius:12px;border:1px solid var(--border);margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.crack-info{flex:1;min-width:150px}
+.crack-title{font-weight:800;margin-bottom:3px}
+.crack-desc{font-size:.85rem;color:var(--muted)}
+.crack-price{color:var(--gold);font-weight:900;font-size:1rem}
+.crack-wa-btn{background:var(--wa);color:#fff;border:none;padding:10px 14px;border-radius:8px;cursor:pointer;font-weight:700;text-decoration:none;font-size:.9rem}
+
+/* زر واتساب العائم */
+.float-wa{position:fixed;bottom:25px;left:25px;background:var(--wa);color:#fff;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;text-decoration:none;box-shadow:0 10px 20px rgba(37,211,102,.4);z-index:99; transition:.3s;}
+.float-wa:hover{transform:scale(1.1)}
+
+@media(max-width:600px){.grid{grid-template-columns:1fr}.brand-title{font-size:1.7rem}}
+</style>
+</head>
+<body>
+
+<div class="ticker-wrapper">
+  <div class="ticker">
+    🎁 صيانة داخل الكوت بأسعار منافسة | فتح أجهزة بدون فورمات | شاشات أصلية بضمان
+  </div>
+</div>
+
+<button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+
+<header class="header">
+  <img src="logo.jpg" alt="محمد فون" class="logo" onerror="this.src='https://ui-avatars.com/api/?name=محمد+فون&background=fff&color=c5a059&size=200'">
+  <h1 class="brand-title">محمد فون</h1>
+  <p class="brand-subtitle">MOHAMMED PHONE</p>
+  <div class="quick-contact">
+    <a href="https://wa.me/9647766501022" target="_blank">💬 واتساب</a>
+    <a href="tel:+9647766501022">📞 اتصل بي</a>
+    <a href="https://maps.google.com/?q=الكوت" target="_blank">📍 موقع المحل</a>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- شريط الضمان -->
+  <div class="trust-bar">
+    <div>🛡️ ضمان 30 يوم</div>
+    <div>💎 قطع أصلية</div>
+    <div>⚡ صيانة داخل الكوت</div>
+  </div>
+
+  <!-- قسم الكراكات -->
+  <div class="section-card" style="border-color:var(--gold)">
+    <h2 class="section-title"><span>🔓</span> قسم الكراكات وتفعيل البرامج</h2>
+    <div class="crack-item">
+      <div class="crack-info"><div class="crack-title">Unlock Tool (أوف لاين)</div><div class="crack-desc">تفعيل كامل بدون إنترنت</div></div>
+      <span class="crack-price">$10</span>
+      <a href="https://wa.me/9647766501022?text=أريد Unlock Tool أوف لاين بـ 10 دولار" class="crack-wa-btn" target="_blank">اطلب</a>
+    </div>
+    <div class="crack-item">
+      <div class="crack-info"><div class="crack-title">Oxygen FRP</div><div class="crack-desc">تخطي حساب جوجل بسهولة</div></div>
+      <span class="crack-price">$10</span>
+      <a href="https://wa.me/9647766501022?text=أريد استفسار عن Oxygen FRP" class="crack-wa-btn" target="_blank">اطلب</a>
+    </div>
+    <div class="crack-item">
+      <div class="crack-info"><div class="crack-title">UFED Ultimate</div><div class="crack-desc">أقوى أداة فتح احترافية</div></div>
+      <span class="crack-price">$10</span>
+      <a href="https://wa.me/9647766501022?text=أريد استفسار عن UFED Ultimate" class="crack-wa-btn" target="_blank">اطلب</a>
+    </div>
+    <div class="crack-item">
+      <div class="crack-info"><div class="crack-title">Mobile Edit</div><div class="crack-desc">مع التثبيت والتفعيل</div></div>
+      <span class="crack-price">$20</span>
+      <a href="https://wa.me/9647766501022?text=أريد استفسار عن Mobile Edit مع التثبيت" class="crack-wa-btn" target="_blank">اطلب</a>
+    </div>
+  </div>
+
+  <!-- قسم الشاشات والخانات -->
+  <div class="section-card">
+    <h2 class="section-title"><span>📱</span> قائمة أسعار الشاشات</h2>
+    
+    <!-- خانات الماركات (الترتيب الشبكي) -->
+    <div class="brands-grid" id="brandsTabs">
+      <button class="brand-btn active" data-brand="all" onclick="filterBrand('all', this)">
+        <span>🌐</span> الكل
+      </button>
+      <button class="brand-btn" data-brand="Apple" onclick="filterBrand('Apple', this)">
+        <span>🍏</span> آيفون
+      </button>
+      <button class="brand-btn" data-brand="Samsung" onclick="filterBrand('Samsung', this)">
+        <span>📱</span> سامسونج
+      </button>
+      <button class="brand-btn" data-brand="Redmi" onclick="filterBrand('Redmi', this)">
+        <span>📲</span> ريدمي
+      </button>
+      <button class="brand-btn" data-brand="Oppo" onclick="filterBrand('Oppo', this)">
+        <span>📸</span> أوبو
+      </button>
+      <button class="brand-btn" data-brand="Realme" onclick="filterBrand('Realme', this)">
+        <span>⚡</span> ريلمي
+      </button>
+      <button class="brand-btn" data-brand="Huawei" onclick="filterBrand('Huawei', this)">
+        <span>🌸</span> هواوي
+      </button>
+    </div>
+
+    <input type="text" id="searchInput" class="search-input" placeholder="🔍 ابحث عن اسم الجهاز..." oninput="searchPhones()">
+    <div class="grid" id="phonesGrid"></div>
+  </div>
+
+</div>
+
+<a href="https://wa.me/9647766501022?text=مرحبا، أريد الاستفسار" class="float-wa" target="_blank">💬</a>
+
+<script>
+const WA_NUMBER = "9647766501022";
+
+const phones = [
+  // آيفون
+  {id:1, name:"iPhone 6 / 6s", brand:"Apple", icon:"📱", normal:25000, orig:70000},
+  {id:2, name:"iPhone 7 / 8", brand:"Apple", icon:"📱", normal:30000, orig:85000},
+  {id:3, name:"iPhone X / XR", brand:"Apple", icon:"📱", normal:35000, orig:100000},
+  {id:4, name:"iPhone 11", brand:"Apple", icon:"📱", normal:45000, orig:120000},
+  {id:5, name:"iPhone 12", brand:"Apple", icon:"📱", normal:60000, orig:150000},
+  {id:6, name:"iPhone 13", brand:"Apple", icon:"📱", normal:75000, orig:250000},
+  {id:7, name:"iPhone 14 Pro", brand:"Apple", icon:"📱", normal:120000, orig:280000},
+  {id:8, name:"iPhone 15 Pro Max", brand:"Apple", icon:"📱", normal:150000, orig:350000},
+
+  // سامسونج
+  {id:9, name:"Samsung A10 / A20", brand:"Samsung", icon:"📲", normal:20000, orig:65000},
+  {id:10, name:"Samsung A30 / A50", brand:"Samsung", icon:"📲", normal:30000, orig:75000},
+  {id:11, name:"Samsung A51 / A71", brand:"Samsung", icon:"📲", normal:35000, orig:90000},
+  {id:12, name:"Samsung A52 / A72", brand:"Samsung", icon:"📲", normal:45000, orig:110000},
+  {id:13, name:"Samsung S20", brand:"Samsung", icon:"📲", normal:85000, orig:180000},
+  {id:14, name:"Samsung S21", brand:"Samsung", icon:"📲", normal:95000, orig:220000},
+  {id:15, name:"Samsung S22 Ultra", brand:"Samsung", icon:"📲", normal:120000, orig:260000},
+  {id:16, name:"Samsung S23 Ultra", brand:"Samsung", icon:"📲", normal:150000, orig:300000},
+
+  // ريدمي / شاومي
+  {id:17, name:"Redmi 9 / 9A", brand:"Redmi", icon:"📱", normal:15000, orig:50000},
+  {id:18, name:"Redmi 10", brand:"Redmi", icon:"📱", normal:20000, orig:70000},
+  {id:19, name:"Redmi Note 10", brand:"Redmi", icon:"📱", normal:25000, orig:85000},
+  {id:20, name:"Redmi Note 11", brand:"Redmi", icon:"📱", normal:30000, orig:95000},
+  {id:21, name:"Redmi Note 12", brand:"Redmi", icon:"📱", normal:35000, orig:110000},
+  {id:22, name:"Poco X3 / X4", brand:"Redmi", icon:"📱", normal:40000, orig:120000},
+  {id:23, name:"Xiaomi 13 Pro", brand:"Redmi", icon:"📱", normal:85000, orig:180000},
+
+  // أوبو
+  {id:24, name:"Oppo A15 / A16", brand:"Oppo", icon:"📸", normal:20000, orig:65000},
+  {id:25, name:"Oppo A57 / A58", brand:"Oppo", icon:"📸", normal:30000, orig:80000},
+  {id:26, name:"Oppo Reno 7", brand:"Oppo", icon:"📸", normal:55000, orig:110000},
+  {id:27, name:"Oppo Reno 8", brand:"Oppo", icon:"📸", normal:65000, orig:130000},
+
+  // ريلمي
+  {id:28, name:"Realme C11 / C15", brand:"Realme", icon:"⚡", normal:20000, orig:60000},
+  {id:29, name:"Realme 8 / 9", brand:"Realme", icon:"⚡", normal:35000, orig:90000},
+  {id:30, name:"Realme GT Master", brand:"Realme", icon:"⚡", normal:50000, orig:130000},
+
+  // هواوي
+  {id:31, name:"Huawei Y7 / Y9", brand:"Huawei", icon:"🌸", normal:25000, orig:70000},
+  {id:32, name:"Huawei Nova 9", brand:"Huawei", icon:"🌸", normal:45000, orig:110000},
+  {id:33, name:"Huawei P40 / P50", brand:"Huawei", icon:"🌸", normal:70000, orig:180000}
+];
+
+let currentBrand = 'all';
+
+function renderPhones(data) {
+  const grid = document.getElementById('phonesGrid');
+  if(data.length === 0) { grid.innerHTML = '<p style="text-align:center;grid-column:1/-1;color:var(--muted);padding:30px">لا توجد أجهزة مطابقة</p>'; return; }
+  
+  grid.innerHTML = data.map(p => `
+    <div class="phone-card">
+      <div class="phone-icon">${p.icon}</div>
+      <div class="phone-name">${p.name}<span class="badge">${p.brand}</span></div>
+      <div class="price-line"><span>شاشة عادية:</span><strong>${p.normal.toLocaleString()} د.ع</strong></div>
+      <div class="price-line"><span>شاشة أصلية:</span><strong class="gold">${p.orig.toLocaleString()} د.ع</strong></div>
+      <a href="https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('مرحبا، أريد شاشة لجهاز: '+p.name)}" class="btn-whatsapp-card" target="_blank">💬 مراسلة واتساب للطلب</a>
+    </div>
+  `).join('');
+}
+
+function filterBrand(brand, btn) {
+  currentBrand = brand;
+  document.querySelectorAll('.brand-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('searchInput').value = '';
+  
+  if(brand === 'all') {
+    renderPhones(phones);
+  } else {
+    renderPhones(phones.filter(p => p.brand === brand));
+  }
+}
+
+function searchPhones() {
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  let filtered = phones;
+  
+  if(currentBrand !== 'all') {
+    filtered = filtered.filter(p => p.brand === currentBrand);
+  }
+  if(q) {
+    filtered = filtered.filter(p => p.name.toLowerCase().includes(q));
+  }
+  renderPhones(filtered);
+}
+
+function toggleTheme() {
+  const body = document.body;
+  if(body.getAttribute('data-theme') === 'dark') {
+    body.removeAttribute('data-theme');
+    localStorage.setItem('theme', 'light');
+  } else {
+    body.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+  }
+}
+if(localStorage.getItem('theme') === 'dark') document.body.setAttribute('data-theme', 'dark');
+
+renderPhones(phones);
+</script>
+</body>
+</html>
