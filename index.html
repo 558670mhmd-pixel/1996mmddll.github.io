@@ -34,14 +34,11 @@ button,a,input,select,textarea{font-family:inherit}
 .section-title{font-size:1.3rem;font-weight:800;margin-bottom:20px;display:flex;align-items:center;gap:10px;padding-bottom:15px;border-bottom:1px solid var(--border)}
 .section-title span{color:var(--gold)}
 
-/* الأكثر طلباً */
 .hot-deals{display:flex;gap:10px;overflow-x:auto;padding-bottom:10px}
 .hot-item{background:var(--bg);padding:15px;border-radius:12px;min-width:150px;text-align:center;border:1px solid var(--gold);cursor:pointer;transition:.3s}
 .hot-item:hover{background:var(--gold);color:#111}
-.hot-item img{width:50px;margin-bottom:10px}
 .hot-item .hot-name{font-weight:800;font-size:.9rem}
 
-/* الحجز */
 .form-group{margin-bottom:15px}
 .form-group label{display:block;margin-bottom:5px;font-weight:700;font-size:.95rem}
 .form-group input, .form-group select, .form-group textarea{width:100%;padding:12px;border:1px solid var(--border);border-radius:10px;background:var(--bg);color:var(--text);font-size:.95rem}
@@ -49,12 +46,10 @@ button,a,input,select,textarea{font-family:inherit}
 .btn-submit{width:100%;background:var(--black);color:#fff;border:none;padding:15px;border-radius:10px;font-weight:800;font-size:1rem;cursor:pointer}
 .btn-submit:hover{background:var(--gold);color:var(--black)}
 
-/* تتبع */
 .track-result{padding:20px;border-radius:10px;margin-top:15px;display:none}
 .track-result.success{display:block;background:rgba(16,185,129,0.1);border:1px solid var(--green);color:var(--green);font-weight:700;text-align:center}
 .track-result.error{display:block;background:rgba(239,68,68,0.1);border:1px solid var(--red);color:var(--red);font-weight:700;text-align:center}
 
-/* التقييمات */
 .reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:15px;margin-top:15px}
 .review-card{background:var(--bg);padding:15px;border-radius:12px;border:1px solid var(--border)}
 .review-stars{color:var(--gold);font-size:1.1rem;margin-bottom:8px}
@@ -64,7 +59,6 @@ button,a,input,select,textarea{font-family:inherit}
 .star-rating .star{color:#ddd;transition:.2s}
 .star-rating .star.active{color:var(--gold)}
 
-/* باقي التصميم (السلة، البحث...) */
 .search-input{width:100%;padding:16px 20px;border:1px solid var(--border);border-radius:12px;font-size:1rem;background:var(--bg);color:var(--text);margin-bottom:20px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:15px}
 .phone-card{border:1px solid var(--border);border-radius:12px;padding:20px;background:var(--bg);transition:.3s}
@@ -81,7 +75,6 @@ button,a,input,select,textarea{font-family:inherit}
 .btn-whatsapp{flex:1;text-align:center;background:var(--wa);color:#fff;padding:10px;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem}
 .btn-whatsapp:hover{background:#1eb954}
 
-/* الكراكات */
 .crack-item{background:var(--bg);padding:15px;border-radius:12px;border:1px solid var(--border);margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
 .crack-info{flex:1;min-width:150px}
 .crack-title{font-weight:800;margin-bottom:3px}
@@ -89,7 +82,6 @@ button,a,input,select,textarea{font-family:inherit}
 .crack-price{color:var(--gold);font-weight:900;font-size:1rem}
 .crack-wa-btn{background:var(--wa);color:#fff;border:none;padding:10px 14px;border-radius:8px;cursor:pointer;font-weight:700;text-decoration:none;font-size:.9rem}
 
-/* المودال والسلة */
 .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:2000;justify-content:center;align-items:center;padding:20px}
 .modal.active{display:flex}
 .modal-content{background:var(--card);border-radius:20px;width:100%;max-width:500px;max-height:90vh;overflow-y:auto;padding:25px}
@@ -111,7 +103,6 @@ button,a,input,select,textarea{font-family:inherit}
 .btn-checkout{width:100%;background:var(--wa);color:#fff;border:none;padding:15px;border-radius:12px;font-weight:900;font-size:1rem;cursor:pointer;margin-top:15px}
 .empty-cart{text-align:center;padding:40px;color:var(--muted)}
 
-/* أزرار عائمة */
 .toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--black);color:#fff;padding:14px 28px;border-radius:30px;font-weight:700;z-index:3000;opacity:0;transition:.4s}
 .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
 .scroll-top{position:fixed;bottom:25px;right:25px;width:45px;height:45px;background:var(--black);color:#fff;border:none;border-radius:50%;cursor:pointer;font-size:1.3rem;display:none;align-items:center;justify-content:center;z-index:99}
@@ -146,6 +137,13 @@ button,a,input,select,textarea{font-family:inherit}
 
 <div class="container">
 
+  <!-- شريط الضمان والثقة -->
+  <div style="display:flex; justify-content:space-around; background:var(--card); padding:15px; border-radius:16px; margin-bottom:20px; border:1px solid var(--border); flex-wrap:wrap; gap:10px;">
+    <div style="text-align:center; font-weight:700; font-size:0.85rem;">🛡️ ضمان 30 يوم</div>
+    <div style="text-align:center; font-weight:700; font-size:0.85rem;">💎 قطع أصلية</div>
+    <div style="text-align:center; font-weight:700; font-size:0.85rem;">⚡ صيانة داخل الكوت</div>
+  </div>
+
   <!-- قسم الأكثر طلباً -->
   <div class="section-card" style="background:linear-gradient(135deg, var(--bg), var(--card));">
     <h2 class="section-title"><span>🔥</span> الأكثر طلباً هذا الأسبوع</h2>
@@ -153,17 +151,17 @@ button,a,input,select,textarea{font-family:inherit}
       <div class="hot-item" onclick="document.getElementById('searchInput').value='iPhone 13'; filterPhones(); window.scrollTo({top:1200,behavior:'smooth'});">
         <div style="font-size:2rem">📱</div>
         <div class="hot-name">iPhone 13</div>
-        <div style="color:var(--gold);font-weight:900;font-size:.85rem;margin-top:5px">شاشة 30 ألف</div>
+        <div style="color:var(--gold);font-weight:900;font-size:.85rem;margin-top:5px">شاشة 75 ألف</div>
       </div>
       <div class="hot-item" onclick="document.getElementById('searchInput').value='Samsung A52'; filterPhones(); window.scrollTo({top:1200,behavior:'smooth'});">
         <div style="font-size:2rem">📲</div>
         <div class="hot-name">Samsung A52</div>
-        <div style="color:var(--gold);font-weight:900;font-size:.85rem;margin-top:5px">شاشة 30 ألف</div>
+        <div style="color:var(--gold);font-weight:900;font-size:.85rem;margin-top:5px">شاشة 45 ألف</div>
       </div>
       <div class="hot-item" onclick="document.getElementById('searchInput').value='Redmi Note 12'; filterPhones(); window.scrollTo({top:1200,behavior:'smooth'});">
         <div style="font-size:2rem">📱</div>
         <div class="hot-name">Redmi Note 12</div>
-        <div style="color:var(--gold);font-weight:900;font-size:.85rem;margin-top:5px">شاشة 30 ألف</div>
+        <div style="color:var(--gold);font-weight:900;font-size:.85rem;margin-top:5px">شاشة 35 ألف</div>
       </div>
     </div>
   </div>
@@ -200,6 +198,16 @@ button,a,input,select,textarea{font-family:inherit}
     <div class="grid" id="phonesGrid"></div>
   </div>
 
+  <!-- قسم طلب شاشة غير موجودة -->
+  <div class="section-card" style="border-color: #3b82f6;">
+    <h2 class="section-title"><span>❓</span> ما لقة جهازك بالقائمة؟</h2>
+    <p style="color:var(--muted); font-size:0.9rem; margin-bottom:15px;">اكتب نوع جهازك هنا وراح نرد عليك بالسعر فوراً عبر الواتساب.</p>
+    <div class="form-group">
+      <input type="text" id="otherDeviceName" placeholder="مثال: iPhone 16 أو Samsung A54">
+    </div>
+    <button class="btn-submit" onclick="requestOtherDevice()">📤 استفسر عن السعر الآن</button>
+  </div>
+
   <!-- قسم حجز موعد -->
   <div class="section-card" style="border-color: var(--green);">
     <h2 class="section-title"><span>📅</span> احجز موعد صيانة</h2>
@@ -219,12 +227,13 @@ button,a,input,select,textarea{font-family:inherit}
         <option>Xiaomi</option>
         <option>Oppo</option>
         <option>Huawei</option>
+        <option>Realme</option>
         <option>أخرى</option>
       </select>
     </div>
     <div class="form-group">
       <label>المشكلة / العطل</label>
-      <textarea id="bookIssue" rows="3" placeholder="مثال: شاشة مكسورة، البطارية تنفد بسرعة، فتح قفل..."></textarea>
+      <textarea id="bookIssue" rows="3" placeholder="مثال: شاشة مكسورة، البطارية تنفد بسرعة..."></textarea>
     </div>
     <button class="btn-submit" onclick="bookAppointment()">📤 احجز الآن عبر واتساب</button>
   </div>
@@ -243,8 +252,6 @@ button,a,input,select,textarea{font-family:inherit}
   <!-- قسم التقييمات -->
   <div class="section-card">
     <h2 class="section-title"><span>⭐</span> آراء زبائننا والتقييمات</h2>
-    
-    <!-- نموذج تقييم جديد -->
     <div style="background:var(--bg); padding:15px; border-radius:12px; margin-bottom:20px;">
       <h4 style="margin-bottom:10px;">أضف تقييمك:</h4>
       <div class="star-rating" id="starRating">
@@ -257,8 +264,6 @@ button,a,input,select,textarea{font-family:inherit}
       <textarea id="reviewText" rows="2" style="width:100%; padding:10px; border:1px solid var(--border); border-radius:8px; background:var(--card); color:var(--text);" placeholder="اكتب تجربتك معنا..."></textarea>
       <button class="btn-submit" style="margin-top:10px;" onclick="submitReview()">إرسال التقييم</button>
     </div>
-
-    <!-- قائمة التقييمات -->
     <div class="reviews-grid" id="reviewsList">
       <div class="review-card">
         <div class="review-stars">★★★★★</div>
@@ -270,6 +275,17 @@ button,a,input,select,textarea{font-family:inherit}
         <div class="review-text">"فتح لي جهازي بدون فورمات، صراحة محترف وأسعاره مناسبة"</div>
         <div class="review-author">— علي ح.</div>
       </div>
+    </div>
+  </div>
+
+  <!-- قسم معرض الأعمال -->
+  <div class="section-card">
+    <h2 class="section-title"><span>📸</span> من أعمالنا الأخيرة</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(150px, 1fr)); gap:10px;">
+      <img src="https://images.unsplash.com/photo-1598327105666-5b89351cb31b?auto=format&fit=crop&w=300&q=80" style="width:100%; height:150px; object-fit:cover; border-radius:10px; border:1px solid var(--border);">
+      <img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=300&q=80" style="width:100%; height:150px; object-fit:cover; border-radius:10px; border:1px solid var(--border);">
+      <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=300&q=80" style="width:100%; height:150px; object-fit:cover; border-radius:10px; border:1px solid var(--border);">
+      <img src="https://images.unsplash.com/photo-1567581935884-3349723552ca?auto=format&fit=crop&w=300&q=80" style="width:100%; height:150px; object-fit:cover; border-radius:10px; border:1px solid var(--border);">
     </div>
   </div>
 
@@ -304,117 +320,45 @@ const COUPON_CODE = "MOHAMMED10";
 const COUPON_DISCOUNT = 0.10;
 let appliedCoupon = false;
 let cart = [];
+let selectedStars = 5;
 
 const phones = [
-  {id:1, name:"iPhone 15 Pro Max", brand:"Apple", icon:"📱", normal:30000, orig:350000},
-  {id:2, name:"iPhone 14 Pro", brand:"Apple", icon:"📱", normal:30000, orig:280000},
-  {id:3, name:"iPhone 13", brand:"Apple", icon:"📱", normal:30000, orig:180000},
-  {id:4, name:"iPhone 12", brand:"Apple", icon:"📱", normal:30000, orig:150000},
-  {id:5, name:"iPhone 11", brand:"Apple", icon:"📱", normal:30000, orig:120000},
-  {id:6, name:"Samsung S23 Ultra", brand:"Samsung", icon:"📲", normal:30000, orig:300000},
-  {id:7, name:"Samsung S22", brand:"Samsung", icon:"📲", normal:30000, orig:260000},
-  {id:8, name:"Samsung A52", brand:"Samsung", icon:"📲", normal:30000, orig:110000},
-  {id:9, name:"Xiaomi 13 Pro", brand:"Xiaomi", icon:"📱", normal:30000, orig:180000},
-  {id:10, name:"Xiaomi Redmi Note 12", brand:"Xiaomi", icon:"📱", normal:30000, orig:110000},
-  {id:11, name:"Xiaomi Redmi 10", brand:"Xiaomi", icon:"📱", normal:30000, orig:70000},
-  {id:12, name:"Oppo Reno 8", brand:"Oppo", icon:"📲", normal:30000, orig:130000},
-  {id:13, name:"Oppo A57", brand:"Oppo", icon:"📲", normal:30000, orig:80000},
-  {id:14, name:"Huawei P50 Pro", brand:"Huawei", icon:"📱", normal:30000, orig:180000},
-  {id:15, name:"Huawei Nova 9", brand:"Huawei", icon:"📱", normal:30000, orig:110000}
+  {id:1, name:"iPhone 6 / 6s", brand:"Apple", icon:"📱", normal:25000, orig:70000},
+  {id:2, name:"iPhone 7 / 8", brand:"Apple", icon:"📱", normal:30000, orig:85000},
+  {id:3, name:"iPhone X / XR", brand:"Apple", icon:"📱", normal:35000, orig:100000},
+  {id:4, name:"iPhone 11", brand:"Apple", icon:"📱", normal:45000, orig:120000},
+  {id:5, name:"iPhone 12", brand:"Apple", icon:"📱", normal:60000, orig:150000},
+  {id:6, name:"iPhone 13", brand:"Apple", icon:"📱", normal:75000, orig:250000},
+  {id:7, name:"iPhone 14 Pro", brand:"Apple", icon:"📱", normal:120000, orig:280000},
+  {id:8, name:"iPhone 15 Pro Max", brand:"Apple", icon:"📱", normal:150000, orig:350000},
+  {id:9, name:"Samsung A10 / A20", brand:"Samsung", icon:"📲", normal:20000, orig:65000},
+  {id:10, name:"Samsung A30 / A50", brand:"Samsung", icon:"📲", normal:30000, orig:75000},
+  {id:11, name:"Samsung A51 / A71", brand:"Samsung", icon:"📲", normal:35000, orig:90000},
+  {id:12, name:"Samsung A52 / A72", brand:"Samsung", icon:"📲", normal:45000, orig:110000},
+  {id:13, name:"Samsung S20", brand:"Samsung", icon:"📲", normal:85000, orig:180000},
+  {id:14, name:"Samsung S21", brand:"Samsung", icon:"📲", normal:95000, orig:220000},
+  {id:15, name:"Samsung S22 Ultra", brand:"Samsung", icon:"📲", normal:120000, orig:260000},
+  {id:16, name:"Samsung S23 Ultra", brand:"Samsung", icon:"📲", normal:150000, orig:300000},
+  {id:17, name:"Redmi 9 / 9A", brand:"Xiaomi", icon:"📱", normal:15000, orig:50000},
+  {id:18, name:"Redmi 10", brand:"Xiaomi", icon:"📱", normal:20000, orig:70000},
+  {id:19, name:"Redmi Note 10", brand:"Xiaomi", icon:"📱", normal:25000, orig:85000},
+  {id:20, name:"Redmi Note 11", brand:"Xiaomi", icon:"📱", normal:30000, orig:95000},
+  {id:21, name:"Redmi Note 12", brand:"Xiaomi", icon:"📱", normal:35000, orig:110000},
+  {id:22, name:"Poco X3 / X4", brand:"Xiaomi", icon:"📱", normal:40000, orig:120000},
+  {id:23, name:"Xiaomi 13 Pro", brand:"Xiaomi", icon:"📱", normal:85000, orig:180000},
+  {id:24, name:"Oppo A15 / A16", brand:"Oppo", icon:"📲", normal:20000, orig:65000},
+  {id:25, name:"Oppo A57 / A58", brand:"Oppo", icon:"📲", normal:30000, orig:80000},
+  {id:26, name:"Oppo Reno 7", brand:"Oppo", icon:"📲", normal:55000, orig:110000},
+  {id:27, name:"Oppo Reno 8", brand:"Oppo", icon:"📲", normal:65000, orig:130000},
+  {id:28, name:"Huawei Y7 / Y9", brand:"Huawei", icon:"📱", normal:25000, orig:70000},
+  {id:29, name:"Huawei Nova 9", brand:"Huawei", icon:"📱", normal:45000, orig:110000},
+  {id:30, name:"Huawei P40 / P50", brand:"Huawei", icon:"📱", normal:70000, orig:180000},
+  {id:31, name:"Realme C11 / C15", brand:"Realme", icon:"📱", normal:20000, orig:60000},
+  {id:32, name:"Realme 8 / 9", brand:"Realme", icon:"📱", normal:35000, orig:90000},
+  {id:33, name:"Realme GT Master", brand:"Realme", icon:"📱", normal:50000, orig:130000}
 ];
 
-// بيانات تتبع وهمية (تقدر تغيرها من هنا)
 const trackData = {
   "07701234567": { status: "🔧 قيد الإصلاح - توقع الجاهزية غداً" },
   "07709876543": { status: "✅ جاهز للاستلام - تفضل بزيارة المحل" },
-  "07711112222": { status: "🛠️ جاري فحص الجهاز" }
-};
-
-function renderPhones(data) {
-  const grid = document.getElementById('phonesGrid');
-  if(data.length === 0) { grid.innerHTML = '<p style="text-align:center;grid-column:1/-1;color:var(--muted);padding:30px">لا توجد نتائج</p>'; return; }
-  grid.innerHTML = data.map(p => `
-    <div class="phone-card">
-      <div class="phone-icon">${p.icon}</div>
-      <div class="phone-name">${p.name}<span class="badge">${p.brand}</span></div>
-      <div class="price-line"><span>شاشة عادية:</span><strong>${p.normal.toLocaleString()} د.ع</strong></div>
-      <div class="price-line"><span>شاشة أصلية:</span><strong class="gold">${p.orig.toLocaleString()} د.ع</strong></div>
-      <div class="card-actions">
-        <button class="btn-add-cart" onclick="addToCart(${p.id},'${p.name}',${p.normal})">🛒 أضف</button>
-        <a href="https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('أريد شاشة لجهاز: '+p.name)}" class="btn-whatsapp" target="_blank">💬 واتساب</a>
-      </div>
-    </div>
-  `).join('');
-}
-
-function filterPhones() {
-  const q = document.getElementById('searchInput').value.toLowerCase();
-  renderPhones(phones.filter(p => p.name.toLowerCase().includes(q)));
-}
-
-function addToCart(id, name, price) {
-  const ex = cart.find(i => i.id === id);
-  if(ex) ex.qty++; else cart.push({id, name, price, qty: 1});
-  updateCartCount();
-  showToast('✅ تمت إضافة ' + name);
-}
-
-function updateCartCount() {
-  document.getElementById('cartCount').textContent = cart.reduce((s,i) => s + i.qty, 0);
-}
-
-function openCart() {
-  document.getElementById('cartModal').classList.add('active');
-  const box = document.getElementById('cartItemsBox');
-  const summary = document.getElementById('cartSummary');
-  
-  if(cart.length === 0) {
-    box.innerHTML = '<div class="empty-cart">🛒 السلة فارغة</div>';
-    summary.innerHTML = '';
-    document.getElementById('couponBox').style.display = 'none';
-    document.getElementById('paymentBox').style.display = 'none';
-    return;
-  }
-  
-  document.getElementById('couponBox').style.display = 'flex';
-  document.getElementById('paymentBox').style.display = 'block';
-  
-  box.innerHTML = cart.map((item, idx) => `
-    <div class="cart-item">
-      <div class="cart-item-info">
-        <div class="cart-item-name">${item.name} × ${item.qty}</div>
-        <div class="cart-item-price">${(item.price * item.qty).toLocaleString()} د.ع</div>
-      </div>
-      <button class="remove-btn" onclick="removeFromCart(${idx})">×</button>
-    </div>
-  `).join('');
-  
-  const total = cart.reduce((s,i) => s + i.price * i.qty, 0);
-  const finalTotal = appliedCoupon ? total * (1 - COUPON_DISCOUNT) : total;
-  const discountRow = appliedCoupon ? `<div style="display:flex;justify-content:space-between;padding:8px 15px;color:#10b981;font-weight:700"><span>خصم (10%):</span><span>-${(total * COUPON_DISCOUNT).toLocaleString()} د.ع</span></div>` : '';
-  
-  summary.innerHTML = `
-    ${discountRow}
-    <div class="cart-total"><span>المجموع:</span><strong>${finalTotal.toLocaleString()} د.ع</strong></div>
-    <button class="btn-checkout" onclick="checkout()">📤 إرسال الطلب للواتساب</button>
-  `;
-}
-
-function closeCart() { document.getElementById('cartModal').classList.remove('active'); }
-function removeFromCart(idx) { cart.splice(idx, 1); updateCartCount(); openCart(); }
-
-function applyCoupon() {
-  const code = document.getElementById('couponInput').value.trim().toUpperCase();
-  if(code === COUPON_CODE) {
-    appliedCoupon = true;
-    showToast('🎉 تم تطبيق الخصم 10%');
-    openCart();
-  } else {
-    showToast('❌ كود غير صحيح');
-  }
-}
-
-function checkout() {
-  if(cart.length === 0) return;
-  const payment = document.querySelector('input[name="pay"]:checked').value;
-  let msg = "🛒 *طلب جديد من
+  "07711112222": { status: "
